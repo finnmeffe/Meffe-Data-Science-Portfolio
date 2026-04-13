@@ -64,8 +64,8 @@ Selected features used by default: `age`, `education_num`, `hours_per_week`, `ca
 
 ```bash
 # 1. Clone the portfolio repo
-git clone https://github.com/YOUR-USERNAME/LASTNAME-Data-Science-Portfolio.git
-cd LASTNAME-Data-Science-Portfolio/MLStreamlitApp
+git clone https://github.com/finnmeffe/MEFFE-Data-Science-Portfolio.git
+cd MEFFE-Data-Science-Portfolio/MLStreamlitApp
 
 # 2. Install dependencies
 pip install -r requirements.txt
