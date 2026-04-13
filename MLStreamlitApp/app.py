@@ -189,7 +189,7 @@ with st.sidebar:
 # Main body of the application
 st.title("Machine Learning Application")
 st.markdown(
-    "Choose to upload your own dataset or use the sample of US Census data."
+    "Choose to upload your own dataset or use the sample of US Census data. "
     "Model parameters can be selected using the the sidebar"
 )
 
