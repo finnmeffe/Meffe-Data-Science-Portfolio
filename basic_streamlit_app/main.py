@@ -5,7 +5,7 @@ import plotly.express as px
 # set global options
 st.set_page_config(layout="wide")
 st.title("EDA using Palmer's Penguins Dataset")
-df = pd.read_csv("data\penguins.csv")
+df = pd.read_csv("data/penguins.csv")
 
 # create filters on side
 st.sidebar.header("Filters")
