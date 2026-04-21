@@ -11,7 +11,7 @@ An interactive Exploratory Data Analysis (EDA) web app built with Streamlit, usi
 
 ## Project Structure
 ```
-├── app.py            # Main Streamlit application
+├── main.py            # Main Streamlit application
 └── data/
     └── penguins.csv  # Palmer Penguins dataset
 ```
