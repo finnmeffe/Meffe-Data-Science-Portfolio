@@ -1,11 +1,11 @@
-# Meffe Data Science Portfolio
+# Data Science Portfolio
 
 This collection of data science projects spanning exploratory data analysis, data cleaning, supervised machine learning, and unsupervised machine learning. Each project is self-contained with its own README and code. Together they trace a progression from foundational data wrangling through to interactive model deployment.
 
 ## Portfolio at a glance
 
 | # | Project | Type | Packages used | 
-|---|---|---|---|---|
+|---|---|---|---|
 | 1 | [Basic Streamlit App](./basic_streamlit_app) | Interactive EDA | Streamlit · pandas · Plotly |
 | 2 | [Tidy Data Project](./TidyData-Project) | Data cleaning & analysis | pandas · matplotlib · Jupyter |
 | 3 | [ML Streamlit App](./MLStreamlitApp) | Supervised ML | Streamlit · scikit-learn | 
@@ -25,19 +25,17 @@ The Tidy Data Project was created with the intention of applying tidy data princ
 
 ---
 
-## 3. ML Streamlit App — Supervised Classification
+## 3. [ML Streamlit App — Supervised Classification](https://github.com/finnmeffe/Meffe-Data-Science-Portfolio/tree/main/MLStreamlitApp)
 
-**[Project folder](https://github.com/finnmeffe/Meffe-Data-Science-Portfolio/tree/main/MLStreamlitApp)** · 
-**[Deployed App](https://meffe-data-science-portfolio-9qwoe8cgyr3titw8wxd7ye.streamlit.app/)**
+**[Deployed App Link](https://meffe-data-science-portfolio-9qwoe8cgyr3titw8wxd7ye.streamlit.app/)**
 
 The machine learning project involved the creation of a Streamlit app that provides an accessible platform to use basic machine learning models on user and sample data.  Users upload their own CSV or explore the bundled UCI Adult Census Income dataset, choose between logistic regression, decision tree, or K-nearest neighbors, tune every hyperparameter from the sidebar, and inspect performance through accuracy/precision/recall/F1, confusion matrices, ROC/AUC curves, and feature-importance bar charts. This app bridges multiple areas of data science, from creating and deploying an app to running and diagnosing machine learning models, and thus presents a step forward from previous projects in this repository.
 
 ---
 
-## 4. ML Unsupervised App — Clustering & Dimensionality Reduction
+## 4. [ML Unsupervised App — Clustering & Dimensionality Reduction](https://github.com/finnmeffe/Meffe-Data-Science-Portfolio/tree/main/MLStreamlitApp)
 
-**[Project folder](https://github.com/finnmeffe/Meffe-Data-Science-Portfolio/tree/main/MLStreamlitApp)**
-**[Deployed App](https://finnmeffe-meffe-data-s-mlunsupervisedappunsupervised-app-aptbsi.streamlit.app/)**
+**[Deployed App Link](https://finnmeffe-meffe-data-s-mlunsupervisedappunsupervised-app-aptbsi.streamlit.app/)**
 
 This is the unsupervised counterpart to the classification app. Users upload a CSV or explore the Kaggle Housing Prices sample (loaded live via the `kagglehub` API), pick features, and tune three different unsupervised models: K-Means clustering, hierarchical clustering, and PCA. A goal was to make unsupervised learning approachable, with every metric, plot, and table is explained inline. This helped teach me how to develop tooling around models, explaining when each algorithm is the right tool, what each knob does, and how to read the diagnostic plots.
 
