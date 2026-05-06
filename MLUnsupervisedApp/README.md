@@ -1,6 +1,12 @@
 # MLUnsupervisedApp
 
-An interactive unsupervised machine learning web app built with Python and Streamlit. Users can upload their own tabular dataset or explore the bundled Housing Prices sample (Kaggle), pick features, and tune three different unsupervised models: K-Means clustering, Agglomerative (hierarchical) clustering, and Principal Component Analysis.
+<kbd>
+<img width="1487" height="812" alt="image" src="https://github.com/user-attachments/assets/33365598-d5f7-4613-a579-ffa5065b95c4" />
+</kbd>
+
+*Example model output using K-Means clustering*
+
+This is an interactive unsupervised machine learning web app built with Python and Streamlit. Users can upload their own tabular dataset or explore the bundled Housing Prices sample (Kaggle), pick features, and tune three different unsupervised models: K-Means clustering, Agglomerative (hierarchical) clustering, and Principal Component Analysis.
 
 ## Live App
 
@@ -89,12 +95,6 @@ The app opens at a local host.
 | matplotlib | ≥ 3.8 | Plotting |
 | seaborn | ≥ 0.13 | Heatmaps and color palettes |
 | kagglehub | ≥ 0.3 | API download of the Housing sample dataset |
-
-## How hyperparameters are selected
-
-- **K in K-Means** — read the elbow plot for a "knee" in the inertia curve and the peak in the silhouette curve. The app overlays both on a single chart so the trade-off is visible.
-- **Linkage in hierarchical clustering** — `ward` is a strong default for compact, similarly-sized clusters and is the only linkage that requires Euclidean distance. Use `complete`/`average`/`single` with custom metrics when cluster shape is non-spherical.
-- **Number of components in PCA** — scan the cumulative variance curve and pick the smallest number of components that captures the variance you need (often 80–95 %).
 
 ## References
 - [Kaggle Housing Prices Dataset](https://www.kaggle.com/datasets/yasserh/housing-prices-dataset)
