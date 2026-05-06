@@ -39,13 +39,3 @@ The machine learning project involved the creation of a Streamlit app that provi
 
 This is the unsupervised counterpart to the classification app. Users upload a CSV or explore the Kaggle Housing Prices sample (loaded live via the `kagglehub` API), pick features, and tune three different unsupervised models: K-Means clustering, hierarchical clustering, and PCA. A goal was to make unsupervised learning approachable, with every metric, plot, and table is explained inline. This helped teach me how to develop tooling around models, explaining when each algorithm is the right tool, what each knob does, and how to read the diagnostic plots.
 
-## Repository structure
-
-```
-Meffe-Data-Science-Portfolio/
-├── basic_streamlit_app/     # Palmer Penguins EDA app (Update 1)
-├── TidyData-Project/        # Federal R&D tidy-data notebook (Update 2)
-├── MLStreamlitApp/          # Supervised ML app (Update 3)
-├── MLUnsupervisedApp/       # Unsupervised ML app (Update 4)
-└── README.md                # This file
-```
