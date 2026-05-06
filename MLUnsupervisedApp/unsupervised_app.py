@@ -1,5 +1,6 @@
 import os
 import io
+import glob
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -20,19 +21,15 @@ st.set_page_config(
 )
 
 
-# Path to the bundled sample dataset
-HOUSING_PATH = os.path.join(os.path.dirname(__file__), "data", "Housing.csv")
+# Kaggle dataset slug for the Housing Prices sample
+KAGGLE_DATASET = "yasserh/housing-prices-dataset"
 
 
-# Load the bundled Housing dataset (Kaggle: yasserh/housing-prices-dataset)
-@st.cache_data
-def load_housing_data():
-    if os.path.exists(HOUSING_PATH):
-        return pd.read_csv(HOUSING_PATH)
-    # Fallback so the app does not crash if the file is missing
+def _synthetic_housing_fallback():
+    """Last-resort dummy data so the app still loads if the API is unreachable."""
     rng = np.random.default_rng(42)
     n = 545
-    df = pd.DataFrame({
+    return pd.DataFrame({
         "price": rng.integers(1_750_000, 13_300_000, n),
         "area": rng.integers(1650, 16200, n),
         "bedrooms": rng.integers(1, 7, n),
@@ -49,7 +46,35 @@ def load_housing_data():
             ["furnished", "semi-furnished", "unfurnished"], n
         ),
     })
-    return df
+
+
+# Pull the Housing dataset directly from Kaggle via the kagglehub API.
+# kagglehub caches the download under ~/.cache/kagglehub/, so subsequent runs
+# re-use the local copy and don't hit the network.
+@st.cache_data(show_spinner=False)
+def load_housing_data():
+    try:
+        import kagglehub  # imported lazily so the app still starts if missing
+        path = kagglehub.dataset_download(KAGGLE_DATASET)
+
+        # The download path is a directory containing one or more CSVs; find
+        # the Housing CSV regardless of exact filename / case.
+        candidates = glob.glob(os.path.join(path, "**", "*.csv"), recursive=True)
+        if not candidates:
+            raise FileNotFoundError(f"No CSV found inside {path}")
+
+        # Prefer a file literally named "Housing.csv" if it's there
+        preferred = [c for c in candidates if os.path.basename(c).lower() == "housing.csv"]
+        csv_path = preferred[0] if preferred else candidates[0]
+        return pd.read_csv(csv_path)
+    except Exception as e:
+        # Don't crash — let the caller know we're on the synthetic fallback.
+        st.warning(
+            "Could not download the Housing dataset from Kaggle "
+            f"(`{KAGGLE_DATASET}`). Falling back to a synthetic sample so the "
+            f"app still works.\n\n*Error:* `{e}`"
+        )
+        return _synthetic_housing_fallback()
 
 
 # Encode categorical (yes/no -> 1/0, multi-class -> one-hot) and standardize
