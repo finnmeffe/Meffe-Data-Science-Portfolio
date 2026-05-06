@@ -4,7 +4,7 @@ This is an interactive supervised machine learning web app built with Python and
 
 ## Live App
 
-> **[Launch the app →](https://meffe-data-science-portfolio-9qwoe8cgyr3titw8wxd7ye.streamlit.app/)**  
+> **[Launch the app](https://meffe-data-science-portfolio-9qwoe8cgyr3titw8wxd7ye.streamlit.app/)**  
 
 ## Project Overview
 
