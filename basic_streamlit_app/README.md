@@ -1,16 +1,16 @@
-# Palmer Penguins EDA App
+# Basic Streamlit App
 
-An interactive **exploratory data analysis** web app built with Python, Streamlit, and Plotly. The app lets users filter the Palmer Penguins dataset on species, island, and sex, and explore the data through summary statistics, distributions, and feature relationships — entirely from a clean tabbed interface, with no code required.
+An interactive exploratory data analysis (EDA) web app built with Python, Streamlit, and Plotly. The app lets users filter the Palmer Penguins dataset on species, island, and sex, and explore the data through summary statistics, distributions, and feature relationships — entirely from a clean tabbed interface, with no code required.
 
 ## Live App
 
-> **[Launch the app →](https://meffe-data-science-portfolio-9qwoe8cgyr3titw8wxd7ye.streamlit.app/)**
+> **[Launch the app →]()** replace this with a working link
 
 ## Project Overview
 
-This app was built as an introductory portfolio project to demonstrate end-to-end Streamlit development: ingesting a real-world dataset, building reactive sidebar filters, organizing analysis into tabs, and producing publication-quality interactive charts. The goal was to make exploratory data analysis accessible to any user — letting them filter and visualize the data themselves instead of reading static plots from a notebook.
+This app was built as an introductory portfolio project to demonstrate end-to-end Streamlit development. This involves ingesting a real-world dataset, building reactive sidebar filters, organizing analysis into tabs, and producing publication-quality interactive charts. The goal was to make exploratory data analysis accessible to any user by letting them filter and visualize the data themselves instead of reading static plots from a notebook.
 
-The dataset is the **Palmer Penguins dataset**, a popular alternative to the classic Iris dataset for teaching data science. It contains body measurements for 344 penguins across three species (Adelie, Chinstrap, Gentoo) sampled from three islands in the Palmer Archipelago, Antarctica. Data were collected by **Dr. Kristen Gorman** and the **Palmer Station, Antarctica LTER**.
+The dataset is the **Palmer Penguins dataset**. It contains body measurements for 344 penguins across three species (Adelie, Chinstrap, Gentoo) sampled from three islands in the Palmer Archipelago, Antarctica. Data were collected by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER.
 
 ## App Features
 
@@ -27,13 +27,13 @@ The dataset is the **Palmer Penguins dataset**, a popular alternative to the cla
 
 ### Tabs
 
-| Tab | What it shows |
+| Tab | Description |
 |---|---|
 | **Overview** | High-level metrics (total penguins, species count, island count), `df.describe()` summary statistics, and an optional toggle to view the full raw dataset |
 | **Distributions** | Pie chart of the species mix in the current filter, plus a histogram (with box-plot marginal) of any selected numeric feature, colored by species |
 | **Relationships** | Scatter plot of any two numeric features against each other, colored by species and shaped by sex — designed for spotting clusters and inter-species differences |
 
-All visualizations are built with **Plotly Express**, so they support hover-tooltips, zoom, pan, and PNG export out of the box.
+All visualizations are built with Plotly Express, so they support hover-tooltips, zoom, pan, and PNG export out of the box.
 
 ## Sample dataset
 
@@ -85,12 +85,7 @@ pip install streamlit pandas plotly
 streamlit run main.py
 ```
 
-The app opens automatically at `http://localhost:8501`.
-
-### Deploy to Streamlit Community Cloud
-1. Push the repo to GitHub.
-2. Go to [share.streamlit.io](https://share.streamlit.io), pick the repo, and set the main file to `basic_streamlit_app/main.py`.
-3. Streamlit Cloud will install dependencies and host the app at a public URL.
+The app opens automatically at a local host.
 
 ### Dependencies
 
