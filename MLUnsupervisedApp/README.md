@@ -1,6 +1,12 @@
 # MLUnsupervisedApp
 
-An interactive unsupervised machine learning web app built with Python and Streamlit. Users can upload their own tabular dataset or explore the bundled Housing Prices sample (Kaggle), pick features, and tune three different unsupervised models: K-Means clustering, Agglomerative (hierarchical) clustering, and Principal Component Analysis.
+<kbd>
+<img width="1487" height="812" alt="image" src="https://github.com/user-attachments/assets/33365598-d5f7-4613-a579-ffa5065b95c4" />
+</kbd>
+
+*Example model output using K-Means clustering*
+
+This is an interactive unsupervised machine learning web app built with Python and Streamlit. Users can upload their own tabular dataset or explore the bundled Housing Prices sample (Kaggle), pick features, and tune three different unsupervised models: K-Means clustering, Agglomerative (hierarchical) clustering, and Principal Component Analysis.
 
 ## Live App
 
