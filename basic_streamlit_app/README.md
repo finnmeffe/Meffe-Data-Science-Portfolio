@@ -2,10 +2,6 @@
 
 An interactive exploratory data analysis (EDA) web app built with Python, Streamlit, and Plotly. The app lets users filter the Palmer Penguins dataset on species, island, and sex, and explore the data through summary statistics, distributions, and feature relationships — entirely from a clean tabbed interface, with no code required.
 
-## Live App
-
-> **[Launch the app →]()** replace this with a working link
-
 ## Project Overview
 
 This app was built as an introductory portfolio project to demonstrate end-to-end Streamlit development. This involves ingesting a real-world dataset, building reactive sidebar filters, organizing analysis into tabs, and producing publication-quality interactive charts. The goal was to make exploratory data analysis accessible to any user by letting them filter and visualize the data themselves instead of reading static plots from a notebook.
