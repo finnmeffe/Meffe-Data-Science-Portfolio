@@ -4,7 +4,7 @@ An interactive unsupervised machine learning web app built with Python and Strea
 
 ## Live App
 
-> **[Launch the app →]()**
+> **[Launch the app](https://finnmeffe-meffe-data-s-mlunsupervisedappunsupervised-app-aptbsi.streamlit.app/)**
 
 ## Project Overview
 
