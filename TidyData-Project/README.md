@@ -1,10 +1,10 @@
-# Federal R&D Spending — Tidy Data Project
+# Tidy Data Project
 
 A data-cleaning and exploratory analysis project that takes a deliberately messy dataset of US federal research-and-development spending and reshapes it into a long, tidy format following Hadley Wickham's tidy-data principles. The cleaned data is then used to produce four visualizations of how R&D spending has evolved by department from 1976 to 2017.
 
 ## Project Overview
 
-The raw dataset is a wide table with **one row per department** and **one column per year**, where the year columns also have the national GDP for that year mashed into the column name (e.g. `1976_gdp1790000000000.0`). This makes it nearly impossible to plot or aggregate the data without first cleaning it.
+The raw dataset is a wide table with one row per department and one column per year, where the year columns also have the national GDP for that year mashed into the column name (e.g. `1976_gdp1790000000000.0`). This makes it nearly impossible to plot or aggregate the data without first cleaning it.
 
 The notebook walks through a complete tidy-data workflow in detail:
 
