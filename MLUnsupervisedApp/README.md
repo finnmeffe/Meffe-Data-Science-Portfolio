@@ -6,20 +6,17 @@ An interactive unsupervised machine learning web app built with Python and Strea
 
 > **[Launch the app →]()**
 
-(Replace with your deployed URL after pushing to Streamlit Community Cloud.)
-
 ## Project Overview
 
-This app is the unsupervised counterpart to the classification app in `../MLStreamlitApp`. The goal is to make exploratory unsupervised learning accessible: you give it a dataset and a model, and the app produces the standard diagnostics — elbow plots, silhouette scores, dendrograms, and PCA scree/loadings — without writing any code.
+This app is the unsupervised counterpart to the classification app in `../MLStreamlitApp`. The goal is to make exploratory unsupervised learning accessible: you give it a dataset and a model, and the app produces the standard diagnostics (e.g. elbow plots, silhouette scores, dendrograms, and PCA scree/loadings) without writing any code.
 
-The bundled sample is the **Housing Prices Dataset** by Yasser H. on Kaggle: 545 rows of residential property listings with both numeric (price, area, bedrooms, …) and categorical (mainroad, furnishingstatus, …) features. It is well suited to clustering because there are clear segments (small unfurnished houses vs. large furnished ones with parking and AC) that the algorithms should recover.
+The bundled sample is the Housing Prices Dataset by Yasser H. on Kaggle: 545 rows of residential property listings with both numeric (price, area, bedrooms, …) and categorical (mainroad, furnishingstatus, …) features. It is well suited to clustering because there are clear segments (small unfurnished houses vs. large furnished ones with parking and AC) that the algorithms should recover.
 
 ## App Features
 
 ### Data layer
 - **Upload any CSV** to use your own tabular dataset
-- **Housing sample fetched live from Kaggle** via the [`kagglehub`](https://github.com/Kaggle/kagglehub) API (`yasserh/housing-prices-dataset`); the download is cached locally so subsequent runs are instant and offline-friendly
-- Automatic synthetic fallback if Kaggle is unreachable, so the app never fails to start
+- **Housing sample from Kaggle** via the [`kagglehub`](https://github.com/Kaggle/kagglehub) API (`yasserh/housing-prices-dataset`); the download is cached locally so subsequent runs are instant and offline-friendly
 - Automatic preprocessing: drops missing rows, maps `yes`/`no` columns to `1`/`0`, one-hot-encodes remaining categoricals, and standardizes features (toggleable)
 - Data preview tab with row/column counts, missing-value summary, dtype inspection, and a numeric correlation heatmap
 
@@ -73,7 +70,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-The app opens at `http://localhost:8501`.
+The app opens at a local host.
 
 ### Deploy to Streamlit Community Cloud
 1. Push the repo to GitHub.
