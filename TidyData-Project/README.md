@@ -1,30 +1,30 @@
 # Federal R&D Spending — Tidy Data Project
 
-A data-cleaning and exploratory analysis project that takes a deliberately **untidy** dataset of US federal research-and-development spending and reshapes it into a long, tidy format following Hadley Wickham's tidy-data principles. The cleaned data is then used to produce four visualizations of how R&D spending has evolved by department from 1976 to 2017.
+A data-cleaning and exploratory analysis project that takes a deliberately messy dataset of US federal research-and-development spending and reshapes it into a long, tidy format following Hadley Wickham's tidy-data principles. The cleaned data is then used to produce four visualizations of how R&D spending has evolved by department from 1976 to 2017.
 
 ## Project Overview
 
 The raw dataset is a wide table with **one row per department** and **one column per year**, where the year columns also have the national GDP for that year mashed into the column name (e.g. `1976_gdp1790000000000.0`). This makes it nearly impossible to plot or aggregate the data without first cleaning it.
 
-The notebook walks through a complete tidy-data workflow:
+The notebook walks through a complete tidy-data workflow in detail:
 
-1. **Inspect** the raw CSV and identify the structural problems.
-2. **Reshape** the data with `pd.melt` so every row is a single department–year observation.
-3. **Split** the encoded year/GDP column into separate `year` and `gdp` columns and cast each to its proper dtype.
-4. **Aggregate** the tidy data with pivot tables and `groupby`.
-5. **Visualize** budget trends with four charts that progressively reveal where federal R&D money goes.
+1. Inspect the raw CSV and identify the structural problems.
+2. Reshape the data with `pd.melt` so every row is a single department–year observation.
+3. Split the encoded year/GDP column into separate `year` and `gdp` columns and cast each to its proper dtype.
+4. Aggregate the tidy data with pivot tables and `groupby`.
+5. Visualize budget trends with four charts that progressively reveal where federal R&D money goes.
 
 ### Tidy data principles applied
 
-> Each variable is in its own column.  
-> Each observation forms its own row.  
-> Each type of observational unit forms its own table.
+- Each variable is in its own column.  
+- Each observation forms its own row.  
+- Each type of observational unit forms its own table.
 
-After cleaning, the dataset has exactly four columns — `department`, `year`, `budget`, `gdp` — with one row per department-year pair (588 rows total). This shape is what makes every downstream visualization a one-liner.
+After cleaning, the dataset has exactly four columns — `department`, `year`, `budget`, `gdp` — with one row per department-year pair (588 rows total). This shape is what makes every downstream visualization considerably easier.
 
 ## Visualizations
 
-| # | Chart | What it shows |
+| # | Chart | Description |
 |---|---|---|
 | 1 | **Total R&D budget by year** | A line chart of summed federal R&D spending across all departments, 1976–2017. Reveals the long climb through the 1990s, the post-2000 plateau, and the post-2015 dip. |
 | 2 | **Total R&D budget by department** | A bar chart ranking departments by total spend across the full 42-year window. Shows how the **Department of Defense** dwarfs every other agency (~$2.6T), with HHS, NIH, and NASA following. |
@@ -41,7 +41,7 @@ After cleaning, the dataset has exactly four columns — `department`, `year`, `
 | Departments | 14 (DHS, DOC, DOD, DOE, DOT, EPA, HHS, Interior, NASA, NIH, NSF, Other, USDA, VA) |
 | Tidy shape | 588 rows × 4 columns (`department`, `year`, `budget`, `gdp`) |
 
-The local CSV is intentionally messier than the upstream TidyTuesday version — year headers are concatenated with GDP values — so the project can demonstrate a non-trivial cleaning step rather than just pulling already-clean data.
+The local CSV is intentionally messier than the upstream TidyTuesday version so the project can demonstrate a non-trivial cleaning step rather than just pulling already-clean data.
 
 ## Project Structure
 
@@ -83,12 +83,6 @@ In VS Code: open `tidydata.ipynb`, select your Python kernel, and run each cell 
 | pandas | ≥ 2.0 | Data loading, melting, pivoting, and grouping |
 | matplotlib | ≥ 3.8 | Static plots and `matplotlib.animation` for the bar-race |
 | jupyter / ipython | ≥ 8.0 | Notebook runtime and `HTML` display of the animation |
-
-## Key takeaways
-
-- A messy wide-format dataset can be turned into a long, analysis-ready table with a single `pd.melt` plus a `str.split` to peel apart concatenated identifiers.
-- Once the data is tidy, every aggregation and visualization becomes a one-liner — the cleaning step is what unlocks everything downstream.
-- DOD spending dominates federal R&D so completely that aggregate trends are essentially DOD's trajectory; civilian agencies' budgets are comparatively flat across the 42-year window.
 
 ## References
 
